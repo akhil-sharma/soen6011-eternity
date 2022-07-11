@@ -91,7 +91,7 @@
                 \label{fig:context_of_use}
             \end{figure}
 
-            \chapter{Requirements}
+        \chapter{Requirements}
             % This chapter lists the software requirements using the format outlined in the ISO/IEC/IEEE 29148 sections 5.2.4 to 5.2.7 (“ISO/IEC/IEEE International Standard - Systems and Software Engineering -- Life Cycle Processes -- Requirements Engineering,” 2018, #). 
             The following meta data is associated with each requirement:
         
@@ -101,5 +101,62 @@
                 \item[PRIORITY] This string indicates the importance of implementing this requirement for the minimum viable product. Priority may be one of HIGH, AVERAGE, or LOW.
                 \item[TYPE] This string indicates whether the requirement is functional or non-functional in nature.        
             \end{description}
+            \vspace{3em}
+
+        % Tables for requirements.
+        % Requirement 1
+        \begin{table}[ht]
+            \centering
+                \begin{tabular}{cccc} % ll can be replace with c. | is a table line
+                    \textbf{ID} & \textbf{VERSION} & \textbf{PRIORITY} & \textbf{TYPE}\\
+                            R1  &           1      &           HIGH    &      NON-FUNCTIONAL\\
+                    \hline
+                    \multicolumn{4}{l}{Eternity shall execute on any device with JVM.}
+                \end{tabular}
+                \caption{Requirement 1}
+                \label{tab:table-requirements-1}
+            \end{table}
+            \vspace{3em}
+            
+            % Requirement 2
+            \begin{table}[ht]
+            \centering
+                \begin{tabular}{cccc} % ll can be replace with c. | is a table line
+                    \textbf{ID} & \textbf{VERSION} & \textbf{PRIORITY} & \textbf{TYPE}\\
+                            R2  &           1      &           HIGH    &      FUNCTIONAL\\
+                    \hline
+                    \multicolumn{4}{l}{Eternity shall allow multiple calculations per session}
+                \end{tabular}
+                \caption{Requirement 2}
+                \label{tab:table-requirements-2}
+            \end{table}
+            \vspace{3em}
+            
+            % Requirement 3
+            \begin{table}[ht]
+            \centering
+                \begin{tabular}{cccc} % ll can be replace with c. | is a table line
+                    \textbf{ID} & \textbf{VERSION} & \textbf{PRIORITY} & \textbf{TYPE}\\
+                            R3  &           1      &           HIGH    &      NON-FUNCTIONAL\\
+                    \hline
+                    \multicolumn{4}{l}{Eternity shall be developed with maintainability in mind.}
+                \end{tabular}
+                \caption{Requirement 3}
+                \label{tab:table-requirements-3}
+            \end{table}
+            \vspace{3em}
+    
+            % Requirement 4
+            \begin{table}[ht]
+            \centering
+                \begin{tabular}{cccc} % ll can be replace with c. | is a table line
+                    \textbf{ID} & \textbf{VERSION} & \textbf{PRIORITY} & \textbf{TYPE}\\
+                            R4  &           1      &           HIGH    &      NON-FUNCTIONAL\\
+                    \hline
+                    \multicolumn{4}{l}{Eternity shall be modular and testable.}
+                \end{tabular}
+                \caption{Requirement 4}
+                \label{tab:table-requirements-4}
+            \end{table}
             \vspace{3em}
 \end{document}
