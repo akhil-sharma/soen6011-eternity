@@ -304,4 +304,82 @@
             There exist a few algorithms for calculating the power function. However, requirements \ref{tab:table-requirements-6} and \ref{tab:table-requirements-7} significantly reduce the scope this project.
             We will consider two algorithms for Eternity, the repeated multiplication or iterative solution and, the divide and conquer solution.
             When discussing these algorithms we will assume that the power $y$ is positive since the solution for negative $y$ can be derived trivially from this value.
+
+            \section{Iterative Solution $\langle$ Naive approach $\rangle$} % algorithm level
+        	The iterative solution is the simplest way solve this problem. The calculation of $x^y$ involves multiplying \emph{X} with itself exactly $y$ times.
+        	For example, $2^3 \, = \, 2 \, * \, 2 \, * \, 2 \, = \, 8$.
+        	
+        	\subsection{Pseudocode}
+        % 	\begin{verbatim}
+        % 	    power = 1
+        % 	    while y > 0:
+        % 	        power = power * x
+        % 	        y = y - 1
+        % 	    print (power)
+        % 	\end{verbatim}
+        	
+            % 	\begin{algorithmic}
+            % 	    \STATE {$power \gets 1$}
+            % 	    \WHILE {$y > 0$}
+            % 	        \STATE {$power \gets power * x$}
+            % 	        \STATE {$y = y - 1$}
+            % 	    \ENDWHILE
+            % 	    \RETURN {$power$}
+            % 	\end{algorithmic}
+            	\begin{description}
+                	\item [Input]: Numbers $x$ and $y$ where $x$ is a real number and $y$ is a positive integer.
+                	\item [Output]: Return the value power function $x^y$.
+            	\end{description}
+            	
+            	\begin{algorithm}
+                	\SetKwInput{function}{Function}
+                	\function{$power\_incremental$($x, y$)}
+                	    $power \gets 1$\;
+                	    \While{$y > 0$}{
+                	        $power \gets power * x$\;
+                	        $y = y - 1$\;
+                	    }
+                	    \Return {$power$}\;
+                \caption{Power function using repeated multiplication (Naive).}
+                \label{alg:power-incremental}
+            	\end{algorithm}
+            	
+            \subsection{Complexity}
+            This is a relatively straightforward algorithm and runs in linear time. This results to a time complexity of $O(n)$ where $n$ is the magnitude of power $y$.
+        
+        \clearpage
+
+        \section{Divide and Conquer}
+        In the \textbf{Divide and Conquer} approach the problem is defined recursively as follows:
+            $$power(x, \, y) = power(x, \, y \, / \, 2) \, * \, power(x, \, y \, / \, 2), \, if \, y \, is \, even$$
+            $$power(x, \, y) = x \, * \, power(x, \, y \, / \, 2) \, * \, power(x, \, y \, / \, 2), \, if \, y \, is \, odd$$
+        
+        Here, the problem is being divided into a sub-problem which is half the size of the original problem until the base case is reached where $y \, = \, 1.$
+        
+            \subsection{Pseudocode}
+            	\begin{description}
+                	\item [Input]: Numbers $x$ and $y$ where $x$ is a real number and $y$ is a positive integer.
+                	\item [Output]: Return the value power function $x^y$.
+            	\end{description}
+            	
+            	\begin{algorithm}
+                	\SetKwInput{function}{Function}
+                	\function{$power\_divide\_and\_conquer$($x, y$)}
+                        \If{$n = 0$}{
+                            \Return {1}\;
+                        }
+                        
+                        $pow \gets power\_divide\_and\_conquer(x, y / 2)$\;
+                        
+                        \If{$n$ is odd}{
+                            \Return {$x\,*\, pow \,*\, pow$}\;
+                        }{
+                            \Return {$pow\,*\,pow$}\;
+                        }
+                \caption{Power function using divide and conquer.}
+                \label{alg:power-divide-and-conquer}
+            	\end{algorithm}
+            
+            \subsection{Complexity}
+            Since this algorithm continuously divides the problem in half we get the time complexity of $\mathcal{O}(\log n)$ where $n$ is the magnitude of $y$.
 \end{document}
