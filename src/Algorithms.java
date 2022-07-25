@@ -1,24 +1,31 @@
 /**
- * Algorithms
- * 
  * This class processes the user input for power command.
  */
 public class Algorithms {
     /**
      * Default constructor.
-     * empty.
      */
     Algorithms() {
     }
 
     /*
-     * Validates the command entered by the user.
-     * then computes the power.
+     * Expects the command in the for of String[].
+     * 
+     * A valid command looks like [":pow", "x", "y"]
+     * where x is a double and y is an integer.
+     * 
+     * <bold> y will be casted to integer if it is a double.</bold>
+     * 
+     * This method
+     * <ol>
+     * <li> Validates the arguments provided by the user.</li>
+     * <li> Converts the arguments to appropriate types.</li>
+     * </ol>
      */
     public void power(String[] command) {
         // Check that :pow gets 2 arguments
         if (command.length != 3) {
-            System.err.println(":pow command requires 2 parameters, base and power. USAGE> :pow x y");
+            System.err.println(ErrorStrings.BAD_ARGUMENT_COUNT_POWER);
             return;
         }
 
@@ -30,7 +37,7 @@ public class Algorithms {
         try {
             x = Double.parseDouble(command[1]);
         } catch (NumberFormatException nfe) {
-            System.err.println("The first argument of :pow must be a number.");
+            System.err.println(ErrorStrings.FIRST_ARGUMENT_NOT_NUM_POWER);
             return;
         }
 
@@ -39,20 +46,21 @@ public class Algorithms {
             y_temp = Double.parseDouble(command[2]);
 
             if (Math.ceil(y_temp) != Math.floor(y_temp)) {
-                System.out.println("The second argument was cast to integer.");
+                System.out.println(ErrorStrings.SECOND_ARGUMENT_NOT_NUM_POWER);
+                return;
             }
 
             y = (int) y_temp;
 
         } catch (NumberFormatException nfe) {
-            System.err.println("The second argument of :pow must be a number.");
+            System.err.println(ErrorStrings.SECOND_ARGUMENT_NOT_NUM_POWER);
             return;
         }
 
         // adjust for negative power.
         if (y < 0) {
             if (x == 0) {
-                System.out.println("base cannot be 0 when power is negative.");
+                System.out.println(ErrorStrings.ZERO_BASE_NEGATIVE_POWER);
                 return;
             }
             System.out.println(1 / powerDivideAndConquer(x, -y));
@@ -61,6 +69,14 @@ public class Algorithms {
         }
     }
 
+    /**
+     * Recursively computes the power function using the divide and
+     * conquer approach.
+     * 
+     * @param base  Double value of base c in x^y
+     * @param power Integer value of power in x^y
+     * @return Double value of power function.
+     */
     private Double powerDivideAndConquer(double base, int power) {
         if (power == 0) {
             return 1.0;
