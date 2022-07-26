@@ -10,12 +10,14 @@ import java.util.Scanner;
  */
 class Eternity {
     Scanner scanner;
+    Algorithms alg;
 
     /**
      * Public constructor for the Eternity class.
      */
     Eternity() {
         this.scanner = new Scanner(System.in);
+        this.alg = new Algorithms();
     }
 
     public static void main(String[] args) {
@@ -47,13 +49,10 @@ class Eternity {
         }
 
         if (command[0].equals(":pow")) {
-            evaluatePower(command);
+            alg.power(command);
         } else {
-            System.err.println("Unknown command. No action was performed.");
+            System.err.println(ErrorStrings.UNKNOWN_COMMAND_ERROR);
         }
-    }
-
-    private void evaluatePower(String[] command) {
     }
 
     private void close() {
@@ -70,7 +69,7 @@ class Eternity {
         String[] entry = this.scanner.nextLine().strip().split(" ");
 
         if (!entry[0].equals(":quit") && !entry[0].equals(":pow")) {
-            System.out.print("We have encountered an invalid command.\nTry again:");
+            System.out.print(ErrorStrings.INVALID_COMMAND_ERROR);
             entry = this.scanner.nextLine().strip().split(" ");
         }
 
