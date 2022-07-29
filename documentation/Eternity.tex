@@ -1,11 +1,91 @@
-\documentclass{report}
+\documentclass[11pt,a4paper]{report}
 
-\title{Eternity}
-\author{Akhil Sharma}
+% packages
+\usepackage[margin=1in]{geometry}
+\usepackage{tocloft}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{setspace}
 
+% configuration
+\setcounter{section}{0}
 
 \begin{document}
-	\maketitle
-	\section{Introduction}
-	Hello, World!
+%%%%%%%%%%%%%%%% Title Page %%%%%%%%%%%%%%%%%
+    % \begin{titlepage}
+    %     \begin{center}
+    %         \begin{spacing}{1.5}
+    %             SOEN-6011 Project Report\\
+    %             \vspace*{\fill}
+    %         \end{spacing}
+            
+    %         \begin{spacing}{2.5}
+    %             \textbf{\huge ETERNITY}\\[0.5cm]
+    %             \vspace*{\fill}
+    %             \textit{Submitted by}
+    %         \end{spacing}
+            
+    %         \begin{spacing}{1.15}
+    %             \textbf{\large Akhil Sharma}
+                
+    %             \textbf{\large 40169738}
+                
+    %             \vspace*{\fill}
+    %         \end{spacing}
+    %     \end{center}
+    % \end{titlepage}
+    
+    \chapter{Introduction}
+    
 \end{document}
+
+% \title{Eternity written in \LaTeX. Lists}
+% \author{Akhil Sharma}
+% % I am ignoring the date tag.
+
+% \begin{document}
+%     \maketitle
+%     \tableofcontents
+    
+%     \section{Introduction}
+%     Let's look at the Tabular environments in latex.
+    
+%     \section{The tabular environment}
+    
+%     \begin{tabular}{|l|l|} % ll can be replace with c. | is a table line 
+%         \hline
+%          Name & Your name Here\\
+%          \hline %horizontal bars in the table.
+%          Subject & Writing with \LaTeX\\
+%          \hline %horizontal bar
+%          Grade & A+\\
+%          \hline
+%     \end{tabular}
+    
+%     \subsection{Floats: Table}
+%     The table is a floating environment. The tabular environment can be placed inside a Table.
+    
+%     Floating environment means that \LaTeX will find the best location to place this \emph{float}.
+    
+%     \begin{table}[ht] %here top bottom p {separate page.}
+%         \centering
+%             \begin{tabular}{|c||c|}
+%             \hline
+%                 Name  &  Your name here.\\
+%             \hline
+%                 Class &  Your class here.\\
+%             \hline
+%                 Agenda & We don't have an agenda.\\
+%             \hline
+%             \end{tabular}
+%         \caption{My great book}
+%         \label{tab:my_label}
+%     \end{table}
+    
+%     \subsection{References}
+%     You can see my grades in Table~\ref{tab:my_label}.
+%     % ~ says that the word table and the number of that table must be on the same line.
+%     \section{Maths}
+
+%     \textbf{Hello}$\prod$\LaTeX !
+% \end{document}
