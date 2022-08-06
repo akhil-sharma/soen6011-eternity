@@ -5,7 +5,7 @@ public class ErrorStrings {
   public static String UNKNOWN_COMMAND_ERROR = "Unknown command. No action was performed.";
 
   public static String INVALID_COMMAND_ERROR = "We have encountered an invalid command."
-      + "\nTry again:";
+      + " Try again.\n>";
 
   public static String BAD_ARGUMENT_COUNT_POWER = ":pow command requires 2 agruments, "
       + "base and power.\nUSAGE> :pow x y\nexample (2^3)> :pow 2 3";

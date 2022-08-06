@@ -20,6 +20,9 @@ Directory Structure:
 4. > `:pow base power` will return the result of evaluating base^power.
 
 
+## The read-eval-print-loop
+
+![execution of the read eval print loop](execution.PNG)
 ## Information for Developers
 
 1. This project uses `Google's java style guide.`

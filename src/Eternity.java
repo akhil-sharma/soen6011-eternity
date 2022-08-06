@@ -3,7 +3,8 @@ import java.util.Scanner;
 /**
  * Eternity
  * 
- * <p>This is the driver class for this software project.
+ * <p>
+ * This is the driver class for this software project.
  * It is responsible for presenting a command line interface
  * to the users and performing the necessary actions based on
  * the input.
@@ -29,7 +30,7 @@ class Eternity {
    * Starts the user interface as a read-eval-print-loop.
    */
   private void run() {
-    System.out.println("Welcome to Eternity");
+    System.out.println("\n\t\tWelcome to Eternity");
     String[] action = displayMenu();
     // repl
     while (true) {
@@ -62,14 +63,14 @@ class Eternity {
   }
 
   private String[] displayMenu() {
-    System.out.println("Menu");
+    System.out.println("\t\tMenu");
     System.out.println("1. Power function -> :pow <base> <power>");
     System.out.println("2. quit -> :quit");
-
+    System.out.print(">");
     String[] entry = this.scanner.nextLine().strip().split(" ");
 
     if (!entry[0].equals(":quit") && !entry[0].equals(":pow")) {
-      System.out.print(ErrorStrings.INVALID_COMMAND_ERROR);
+      System.err.print(ErrorStrings.INVALID_COMMAND_ERROR);
       entry = this.scanner.nextLine().strip().split(" ");
     }
 
