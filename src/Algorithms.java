@@ -94,17 +94,4 @@ public class Algorithms {
 
     return pow * pow;
   }
-
-  public static void main(String[] args) {
-    Algorithms alg = new Algorithms();
-    alg.power(new String[] { ":pow", "1", "2" });
-    alg.power(new String[] { ":pow", "0", "2" });
-    alg.power(new String[] { ":pow", "2", "2" });
-    alg.power(new String[] { ":pow", "2", "0" });
-    alg.power(new String[] { ":pow", "2", "-1" });
-    alg.power(new String[] { ":pow", "0", "-1" });
-    alg.power(new String[] { ":pow", "11", "15" });
-    alg.power(new String[] { ":pow", "0", "0" });
-  }
-
 }
